@@ -1,0 +1,101 @@
+<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+
+<form class="form-inline md-form mr-auto mb-4" action="" method='POST'>
+  {% csrf_token %}
+  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name='search'>
+  <button style="background-color:dodgerblue; color:white;" class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+</form>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+
+
+<style media="screen">
+  #t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+#t01 th {
+  background-color: black;
+  color: white;
+}
+</style>
+
+<body style='background-color:black;'>
+
+  <table   >
+    <tr style="background-color:gold; color:white;">
+
+      <th>
+
+      TITLES
+
+      </th>
+  <th>PRICES</th>
+  <th>RATINGS</th>
+    </tr>
+    </th>
+    <tbody>
+      <tr style=" color:white;">
+
+
+
+
+        <td style="background-color:orange">
+
+        {% for i in titles %}
+    		<p style='color: white'> {{i}} </p>
+
+        <br />
+        {% endfor%}
+        </td>
+        <td style='background-color:white'>
+
+
+        {% for i in prices %}
+        <p style='color:dodgerblue'> {{i}} </p>
+        <br />
+        {% endfor%}
+        </td>
+
+    		<td  style='background-color:green'>
+
+
+    		{% for i in ratings %}
+    		<p> {{i}} </p>
+
+    		<br />
+    		{% endfor%}
+    		</td>  </tr>
+    </tbody>
+
+  </table>
+
+
+</body>
